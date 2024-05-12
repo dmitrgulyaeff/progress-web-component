@@ -58,6 +58,12 @@ class CircularProgressBarSettings extends HTMLElement {
         this.progressBar.toggleAttribute('animated', target.checked);
         break;
       case 'value':
+        if (+target.value < 0) {
+          target.value = '0';
+        } else if (+target.value > 100) {
+          target.value = '100';
+        }
+
         this.progressBar.setAttribute('value', target.value);
         break;
     }
@@ -86,7 +92,4 @@ class CircularProgressBarSettings extends HTMLElement {
   }
 }
 
-customElements.define(
-  'progress-settings',
-  CircularProgressBarSettings
-);
+customElements.define('progress-settings', CircularProgressBarSettings);
