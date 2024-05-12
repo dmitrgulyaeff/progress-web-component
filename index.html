@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress web component</title>
+  </head>
+  <body>
+    <aside>
+      <section class="progress">
+        <h1 class="progress__title">Progress</h1>
+        <progress-loader id="target" class="progress__loader"></progress-loader>
+        <progress-settings
+          for="target"
+          value="75"
+          class="progress__settings"
+        ></progress-settings>
+      </section>
+    </aside>
+    <main>
+      <section class="progress">
+        <h2 class="progress__title">Прогресс</h2>
+        <progress-loader
+          id="target2"
+          class="progress__loader"
+        ></progress-loader>
+        <progress-settings
+          for="target2"
+          value="60"
+          class="progress__settings"
+        ></progress-settings>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

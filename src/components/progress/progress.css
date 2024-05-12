@@ -1,0 +1,69 @@
+.progress {
+  display: none;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: var(--app-background-color);
+  border-radius: var(--border-radius);
+}
+
+.progress__title {
+  grid-area: title;
+  margin: 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 25px;
+  color: var(--text-color);
+  user-select: none;
+}
+
+.progress__loader {
+  grid-area: loader;
+  max-width: min-content;
+  margin-inline: auto;
+}
+
+.progress__settings {
+  grid-area: settings;
+  padding-inline-end: 10px;
+  max-width: min-content;
+  margin-inline: auto;
+}
+
+@container (width > 319px) {
+  .progress {
+    height: 568px;
+    width: 320px;
+    display: grid;
+    grid-template-rows: min-content 62px min-content 89px min-content 1fr;
+    grid-template-areas:
+    'title'
+    '.'
+    'loader'
+    '.'
+    'settings'
+    '.';
+  }
+}
+
+@container (width > 567px) {
+  .progress {
+    height: 320px;
+    width: 568px;
+    display: grid;
+    
+    grid-template-rows: min-content 54px min-content;
+    grid-template-columns: 88px min-content 87px min-content 1fr;
+    grid-template-areas:
+    'title title title title title'
+    '. . . . .'
+    '. loader . settings .';
+  }
+  
+  .progress__settings {
+    padding-inline-end: 0;
+    padding-block-start: 5px;
+  }
+}

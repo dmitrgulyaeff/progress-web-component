@@ -1,0 +1,41 @@
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.progress {
+    transform: rotate(-90deg);
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.progress_hidden {
+    opacity: 0;
+}
+
+.progress__arc {
+    animation: rotate 2.5s linear infinite;
+    animation-play-state: paused;
+    transform-origin: center;
+}
+
+.progress__arc_animated {
+    animation-play-state: running;
+}
+
+.progress__background {
+    stroke: var(--base-accent-color);
+}
+
+.progress__arc {
+    stroke: var(--accent-color);
+}
+
+.progress__background,
+.progress__arc {
+    stroke-width: 10px;
+}
